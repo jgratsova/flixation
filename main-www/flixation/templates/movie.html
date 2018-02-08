@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-{% set var_url = 'rtmp://127.0.0.1/vod/mp4:' + single_movie.file %}
+{% set var_url = 'rtmp://35.188.113.180/vod/mp4:' + single_movie.file %}
     <title>{{ single_movie.title }}</title>
 
     <link rel="shortcut icon" href="http://flash.flowplayer.org/favicon.ico">
@@ -58,7 +58,7 @@ $f("wowza", "http://releases.flowplayer.org/swf/flowplayer-3.2.18.swf", {
             url: "flowplayer.rtmp-3.2.13.swf",
 
             // netConnectionUrl defines where the streams are found
-            netConnectionUrl: 'rtmp://127.0.0.1/vod'
+            netConnectionUrl: 'rtmp://35.188.113.180/vod'
         }
     },
     canvas: {
