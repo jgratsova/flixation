@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h2> Welcome to Flixation! </h2>
+    <p>Please register or login to access movies</p>
+    <form action="/register">
+    <input type="submit" class="btn btn-warning" id="submit-button" value="Register" />
+    </form>
+    <form action="/login">
+    <input type="submit" class="btn btn-success" id="submit-button" value="Login" />
+    </form>
+
+{% endblock %}

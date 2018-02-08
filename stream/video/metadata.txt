@@ -1,0 +1,51 @@
+{
+_id: ObjectId(1),
+metadata: {
+  type: "Movie",
+  title: "Central Intelligence",
+  year: "2016"
+  description: "After he reconnects with an awkward pal from high school through Facebook, a mild-mannered accountant is lured into the world of international espionage.",
+  score: "6.3",
+  genre: "Action","Comedy"
+  director: "Rawson Marshall Thurber",
+          }
+}
+
+{
+_id: ObjectId(2),
+metadata: {
+  type: "Movie",
+  title: "The BFG",
+  year: "2016"
+  description: "An orphan little girl befriends a benevolent giant who takes her to Giant Country, where they attempt to stop the man-eating giants that are invading the human world.",
+  score: "6.4",
+  genre: "Family"
+  director: "Steven Spielberg",
+          }
+}
+
+{
+_id: ObjectId(3),
+metadata: {
+  type: "Movie",
+  title: "God's Compass",
+  year: "2016"
+  description: "On the night Suzanne Waters celebrates her retirement, she is faced with a series of crisis she could not have imagined.",
+  score: "7.4",
+  genre: "Drama"
+  director: "Stephan Schultze",
+          }
+}
+
+{
+_id: ObjectId(4),
+metadata: {
+  type: "Movie",
+  title: "The Jungle Book",
+  year: "2016"
+  description: "After a threat from the tiger Shere Khan forces him to flee the jungle, a man-cub named Mowgli embarks on a journey of self discovery with the help of panther, Bagheera, and free spirited bear, Baloo.",
+  score: "7.5",
+  genre: "Drama"
+  director: "Jon Favreau",
+          }
+}

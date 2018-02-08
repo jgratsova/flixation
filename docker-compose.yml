@@ -1,0 +1,53 @@
+version: '2'
+services:
+
+  db:
+    build: db/.
+    volumes:
+      - /var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=supersecure
+      - MYSQL_DATABASE=user_db
+
+  www:
+    restart: always
+    build: www/.
+    ports:
+      - "5000:5000"
+    links:
+      - db
+    depends_on:
+      - db
+
+  main-www:
+    restart: always
+    build: main-www/.
+    ports:
+      - "8080:8080"
+    links:
+      - db
+      - www
+      - mongo
+    depends_on:
+      - www
+
+  stream:
+    restart: always
+    build: stream/.
+    volumes:
+      - /usr/share/nginx/video
+    ports:
+      - 1935:1935
+
+  mongo:
+    restart: always
+    build: mongo/.
+    volumes:
+      - ./data/mongo:/data
+      - ./mongo/data:/import
+    ports:
+      - 27017:27017
+    environment:
+      - MONGODB_USERNAME=myusername
+      - MONGODB_PASSWORD=mypassword
+      - MONGODB_DBNAME=movies

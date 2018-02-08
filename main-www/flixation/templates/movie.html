@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+{% set var_url = 'rtmp://127.0.0.1/vod/mp4:' + single_movie.file %}
+    <title>{{ single_movie.title }}</title>
+
+    <link rel="shortcut icon" href="http://flash.flowplayer.org/favicon.ico">
+    <!-- standalone page styling. can be removed -->
+    <style>
+        body{
+            width:982px;
+            margin:50px auto;
+            font-family:sans-serif;
+        }
+        a:active {
+            outline:none;
+        }
+        :focus { -moz-outline-style:none; }
+
+        .palert {
+            padding: 12px;
+            color: black;
+            background-color: #ededed;
+            box-shadow: none;
+        }
+    </style>
+
+
+
+    <!-- flowplayer javascript component -->
+    <script src="http://releases.flowplayer.org/js/flowplayer-3.2.13.min.js"></script>
+
+    </head>
+
+<body>
+<h2>{{ single_movie.title }}</h2>
+    <!-- widescreen container, 560x240 (clip dimensions) * 1.15, center splash -->
+<div id="wowza" style="width:644px;height:276px;margin:0 auto;text-align:center">
+
+</div>
+
+
+<script>
+
+$f("wowza", "http://releases.flowplayer.org/swf/flowplayer-3.2.18.swf", {
+    clip: {
+        url: '{{ var_url }}',
+        scaling: 'fit',
+        // configure clip to use hddn as our provider, referring to our rtmp plugin
+        provider: 'hddn'
+    },
+
+    // streaming plugins are configured under the plugins node
+    plugins: {
+
+        // here is our rtmp plugin configuration
+        hddn: {
+            url: "flowplayer.rtmp-3.2.13.swf",
+
+            // netConnectionUrl defines where the streams are found
+            netConnectionUrl: 'rtmp://127.0.0.1/vod'
+        }
+    },
+    canvas: {
+        backgroundGradient: 'none'
+    }
+});
+</script>
+
+</body>
+
+</html>
